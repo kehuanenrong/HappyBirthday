@@ -17,9 +17,9 @@ const fetchData = () => {
 
         // Check if the iteration is over
         // Run amimation if so
-        if ( dataArr.length === dataArr.indexOf(customData) + 1 ) {
+        if (dataArr.length === dataArr.indexOf(customData) + 1) {
           animationTimeline();
-        } 
+        }
       });
     });
 };
@@ -300,6 +300,10 @@ const animationTimeline = () => {
   replyBtn.addEventListener("click", () => {
     tl.restart();
   });
+
+  document.querySelector('.btn').addEventListener('click', function () {
+    location.href = './yh/index.html';
+  })
 };
 
 // Run fetch and animation in sequence
