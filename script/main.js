@@ -1,8 +1,16 @@
-// 添加页面加载后自动播放音频文件的功能
-window.addEventListener('load', function () {
-  var audio = new Audio('./audio/bg.mp3');
-  audio.play();
-});
+// // 添加页面加载后自动播放音频文件的功能
+// window.addEventListener('load', function () {
+//   var audio = new Audio('./audio/bg.mp3');
+//   audio.play();
+// });
+
+// Play the background music when the page loads
+window.onload = function () {
+  var audio = document.getElementById('background-music');
+  audio.play().catch(function (error) {
+    console.log("Autoplay failed:", error);
+  });
+};
 
 // Import the data to customize and insert them into page
 const fetchData = () => {
