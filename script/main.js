@@ -308,3 +308,9 @@ const animationTimeline = () => {
 
 // Run fetch and animation in sequence
 fetchData();
+
+// 添加页面加载后自动播放音频文件的功能
+window.addEventListener('load', function () {
+  var audio = new Audio('./audio/bg.mp3');
+  audio.play();
+});
