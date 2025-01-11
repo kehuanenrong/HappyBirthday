@@ -7,6 +7,7 @@
 // Play the background music when the page loads
 window.onload = function () {
   var audio = document.getElementById('background-music');
+  audio.load();
   audio.play().catch(function (error) {
     console.log("Autoplay failed:", error);
   });
