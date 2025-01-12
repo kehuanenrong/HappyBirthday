@@ -1,4 +1,16 @@
-// // 添加页面加载后自动播放音频文件的功能
+// 添加页面加载后自动播放音频文件的功能
+console.log("Script loaded: main.js");
+console.log(document.getElementById('background-music'));
+document.addEventListener('DOMContentLoaded', function () {
+  const audio = document.getElementById('background-music');
+  if (audio) {
+    audio.play().catch(err => {
+      console.error("Audio autoplay blocked or error:", err);
+    });
+  } else {
+    console.error("Audio element not found.");
+  }
+});
 // window.addEventListener('load', function () {
 //   var audio = new Audio('./audio/bg.mp3');
 //   audio.loop = true;
