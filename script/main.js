@@ -77,12 +77,16 @@ const fetchData = () => {
 };
 
 let audio = null
-
 // 在文档加载时预加载音频
-document.addEventListener("DOMContentLoaded", () => {
-  audio = new Audio("../audio/bg.mp3")
-  audio.preload = "auto"
-})
+window.addEventListener('load', function () {
+  audio = new Audio('../audio/bg.mp3');
+  audio.preload = 'auto';
+});
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   audio = new Audio("../audio/bg.mp3")
+//   audio.preload = "auto"
+// })
 
 const playPauseButton = document.getElementById('playPauseButton')
 let isPlaying = false // 初始状态为未播放
