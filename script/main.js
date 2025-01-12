@@ -1,31 +1,32 @@
 // 添加页面加载后自动播放音频文件的功能
-console.log("Script loaded: main.js");
 console.log(document.getElementById('background-music'));
-document.addEventListener('DOMContentLoaded', function () {
-  const audio = document.getElementById('background-music');
-  if (audio) {
-    audio.play().catch(err => {
-      console.error("Audio autoplay blocked or error:", err);
-    });
-  } else {
-    console.error("Audio element not found.");
-  }
-});
-// window.addEventListener('load', function () {
-//   var audio = new Audio('./audio/bg.mp3');
-//   audio.loop = true;
-//   audio.autoplay = true;
-//   audio.preload = 'auto';
-//   audio.play();
+// document.addEventListener('DOMContentLoaded', function () {
+//   const audio = document.getElementById('background-music');
+//   if (audio) {
+//     audio.play().catch(err => {
+//       console.error("Audio autoplay blocked or error:", err);
+//     });
+//   } else {
+//     console.error("Audio element not found.");
+//   }
 // });
+window.addEventListener('load', function () {
+  var audio = new Audio('./audio/bg.mp3');
+  audio.loop = true;
+  audio.autoplay = true;
+  audio.preload = 'auto';
+  audio.play().catch(function (error) {
+    console.log("Autoplay failed:", error);
+  });
+});
 
 // Play the background music when the page loads
 // window.onload = function () {
 //   var audio = document.getElementById('background-music');
 //   audio.load();
-//   audio.play().catch(function (error) {
-//     console.log("Autoplay failed:", error);
-//   });
+// audio.play().catch(function (error) {
+//   console.log("Autoplay failed:", error);
+// });
 // };
 
 // Import the data to customize and insert them into page
