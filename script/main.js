@@ -84,7 +84,7 @@ window.addEventListener('load', function () {
 });
 
 // document.addEventListener("DOMContentLoaded", () => {
-//   audio = new Audio("../audio/bg.mp3")
+//   audio = new Audio("./audio/bg.mp3")
 //   audio.preload = "auto"
 // })
 
