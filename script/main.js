@@ -1,24 +1,41 @@
-// 添加页面加载后自动播放音频文件的功能
-console.log(document.getElementById('background-music'));
-// document.addEventListener('DOMContentLoaded', function () {
-//   const audio = document.getElementById('background-music');
-//   if (audio) {
-//     audio.play().catch(err => {
-//       console.error("Audio autoplay blocked or error:", err);
-//     });
-//   } else {
-//     console.error("Audio element not found.");
-//   }
-// });
-window.addEventListener('load', function () {
-  var audio = new Audio('./audio/bg.mp3');
+// 在文档加载时预加载音频
+let audio = null
+document.addEventListener("DOMContentLoaded", () => {
+  audio = new Audio("../audio/bg.mp3")
+  audio.preload = "auto"
+})
+
+const startButton = document.getElementById('startButton')
+startButton.addEventListener('click', () => {
   audio.loop = true;
   audio.autoplay = true;
   audio.preload = 'auto';
   audio.play().catch(function (error) {
     console.log("Autoplay failed:", error);
   });
-});
+})
+
+// 添加页面加载后自动播放音频文件的功能
+// console.log(document.getElementById('background-music'));
+// document.addEventListener('DOMContentLoaded', function () {
+//   const audio = document.getElementById('background-music');
+//   if (audio) {
+//   audio.play().catch(err => {
+//     console.error("Audio autoplay blocked or error:", err);
+//   });
+// } else {
+//   console.error("Audio element not found.");
+// }
+// });
+// window.addEventListener('load', function () {
+//   var audio = new Audio('./audio/bg.mp3');
+// audio.loop = true;
+// audio.autoplay = true;
+// audio.preload = 'auto';
+// audio.play().catch(function (error) {
+//   console.log("Autoplay failed:", error);
+// });
+// });
 
 // Play the background music when the page loads
 // window.onload = function () {
@@ -49,7 +66,11 @@ const fetchData = () => {
         // Check if the iteration is over
         // Run amimation if so
         if (dataArr.length === dataArr.indexOf(customData) + 1) {
-          animationTimeline();
+          document.querySelector("#startButton").addEventListener("click", () => {
+            document.querySelector(".startSign").style.display = "none"
+            animationTimeline()
+          })
+          // animationTimeline();
         }
       });
     });

@@ -305,3 +305,26 @@ body {
     font-weight: lighter;
   }
 }
+
+/* welcome CSS */
+.startSign {
+  /* 居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 20vh 5vw;
+}
+
+.startSign .button {
+  padding: 1rem 1.6rem;
+  border: 1px solid #2ba245;
+  border-radius: 5px;
+}
+
+.startSign .button:hover {
+  background-color: #2ba245;
+  color: #fff;
+  padding: 1rem 1.6rem;
+  cursor: pointer;
+}
